@@ -32,6 +32,7 @@ struct ContentView: View {
                                            AddNewClassUIView().environmentObject(self.store)
                                        
                     }
+                    } //END OF SECTION
                     
                     /* CLASS LIST SECTION*/
                     //This is the section for the list of classes taken
@@ -39,7 +40,7 @@ struct ContentView: View {
                         ForEach(self.store.classStorage){
                            indv in
                             
-                            VStack {
+                            VStack (alignment: .leading) {
                                 Text(indv.class_name!)
                                 //Individual details per CLASS
                                     HStack {
@@ -48,22 +49,22 @@ struct ContentView: View {
                                             .foregroundColor(.secondary)
                                         Text(indv.outputGradeWorth())
                                             .font(.footnote)
-                                                }
+                                                } //END OF HSTACK
                                 
 
-                            }
+                            } //END OF VSTACK
                           
                             
-                        }
+                        } //END OF FOR EACH
+                        //On Delete/On Move will go here
                     
-                }
+                } //END OF SECTION
+                } //END OF LIST
                 .navigationBarTitle(Text("GPA Calculator")) //Sets up the Title of the App
                 .navigationBarItems(trailing: EditButton()) //Adds the EditButton to the App
                 .listStyle(GroupedListStyle())
                 //Makes the style of List, Grouped.
 
-                }
-            }//End of List
             
             } //End of Navigation View
             
@@ -72,11 +73,11 @@ struct ContentView: View {
                     Text("Current GPA is: ")
                     Text(store.printGPA())
                 }
-            }
+            } //End of VStack
            
-        } //End of VStack
+        } //END OF VSSTACK
     } //End of Body
-} //End of ContentView
+} //END OF CONTENT VIEW
 
 
 struct ContentView_Previews: PreviewProvider {
