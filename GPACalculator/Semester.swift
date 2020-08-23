@@ -39,7 +39,7 @@ class Semester : ObservableObject, Identifiable {
         var Score = 0.0;
         for Class in classStorage{
             creditHours += Class.credit_hours!
-            Score += Class.grade_num!
+            Score += Class.grade_num! * Class.credit_hours!
         }
         SemesterGPA = Score/creditHours
     }
@@ -51,7 +51,7 @@ class Semester : ObservableObject, Identifiable {
         var Score = 0.0;
         for Class in classStorage{
             creditHours += Class.credit_hours!
-            Score += Class.grade_num!
+            Score += Class.grade_num! * Class.credit_hours!
         }
         SemesterGPA = Score/creditHours
 
