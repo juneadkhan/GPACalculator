@@ -22,7 +22,7 @@ struct ContentView: View {
                 
                 
                 List {
-                    
+                    /* ADD CLASS BUTTON SECTION*/
                     //This is the Section for the Add Class Button
                     Section {
                         Button(action: {}) {
@@ -30,27 +30,46 @@ struct ContentView: View {
                         }
                     }
                     
-                    //NEW SECTION
-                    
+                    /* CLASS LIST SECTION*/
+                    //This is the section for the list of classes taken
                     Section {
-                    /*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Section Content@*/Text("Section Content")/*@END_MENU_TOKEN@*/
-                    }
-                    
+                        ForEach(self.store.classStorage){
+                           indv in
+                            
+                            Text(indv.class_name!)
+                            
+                            //Individual details per CLASS
+                            HStack {
+                                Text(indv.grade!)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                Text(indv.outputGradeWorth())
+                                    .font(.footnote)
+                            }
+                            
+                        }
                     
                 }
                 .navigationBarTitle(Text("GPA Calculator")) //Sets up the Title of the App
                 .navigationBarItems(trailing: EditButton()) //Adds the EditButton to the App
                 .listStyle(GroupedListStyle())
                 //Makes the style of List, Grouped.
-                    
 
-
-            }
+                }
             
-        }
+            } //End of Navigation View
+            
+            VStack {
+                Section{
+                    Text("Current GPA is: ")
+                    Text(store.printGPA())
+                }
+            }
            
-    }
-}
+        } //End of VStack
+    } //End of Body
+} //End of ContentView
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
