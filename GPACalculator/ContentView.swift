@@ -10,7 +10,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("GPA Calculator")
+        //This is the entire Stack container
+        VStack {
+           
+            NavigationView {
+                
+                
+                List {
+                    
+                    //This is the Section for the Add Class Button
+                    Section {
+                        Button(action: {}) {
+                            Text("Add Class")
+                        }
+
+                        
+                        
+                    }
+                    
+                    
+                }
+            }
+        }
+           
     }
 }
 
