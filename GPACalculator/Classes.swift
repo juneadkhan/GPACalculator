@@ -10,11 +10,13 @@ import Foundation
 
 public class Classes : Identifiable {
     
+    //A Classes acts an individual class. e.g. "COMP 411"
+    
     public var id = UUID(); //Acts as a Unique ID
     public var class_name : String? //Stores the Name of the Class
     public var grade : String? //Stores the Grade Achieved e.g. "A"
     public var grade_num : Double?
-    public var grade_worth : String?
+    public var grade_worth : Double?
     public var credit_hours : Double? //Stores the number of Credit Hours of the class
     
     func outputGradeWorth() -> String {
