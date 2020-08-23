@@ -25,6 +25,7 @@ struct AddNewClassUIView: View {
     
     @EnvironmentObject var store : Semester //Brings in Environment Object
 
+    
     @State var value: String = "A" //DEFAULT
     @State var creditHours: Double = 3 //DEFAULT
     @State var className: String = "" //DEFAULT
@@ -119,8 +120,8 @@ struct AddNewClassUIView: View {
 }
     
     func addClass(){
-
-        //store.classStorage.append(Classes)
+        
+        store.classStorage.append(Classes(class_name: className, grade: value, credit_hours: creditHours))
 
 
       }

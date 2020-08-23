@@ -25,9 +25,12 @@ struct ContentView: View {
                     /* ADD CLASS BUTTON SECTION*/
                     //This is the Section for the Add Class Button
                     Section {
-                        Button(action: {}) {
+                        Button(action: {                                self.showingSheet.toggle() }) { //Toggles the showingSheet
                             Text("Add Class")
                         }
+                        .sheet(isPresented: $showingSheet){
+                                           AddNewClassUIView().environmentObject(self.store)
+                                       
                     }
                     
                     /* CLASS LIST SECTION*/
@@ -36,16 +39,20 @@ struct ContentView: View {
                         ForEach(self.store.classStorage){
                            indv in
                             
-                            Text(indv.class_name!)
-                            
-                            //Individual details per CLASS
-                            HStack {
-                                Text(indv.grade!)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                Text(indv.outputGradeWorth())
-                                    .font(.footnote)
+                            VStack {
+                                Text(indv.class_name!)
+                                //Individual details per CLASS
+                                    HStack {
+                                        Text(indv.grade!)
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                        Text(indv.outputGradeWorth())
+                                            .font(.footnote)
+                                                }
+                                
+
                             }
+                          
                             
                         }
                     
@@ -56,6 +63,7 @@ struct ContentView: View {
                 //Makes the style of List, Grouped.
 
                 }
+            }//End of List
             
             } //End of Navigation View
             

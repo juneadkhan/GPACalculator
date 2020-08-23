@@ -16,8 +16,15 @@ public class Classes : Identifiable {
     public var class_name : String? //Stores the Name of the Class
     public var grade : String? //Stores the Grade Achieved e.g. "A"
     public var grade_num : Double?
-    public var grade_worth : Double?
+    //public var grade_worth : Double?
     public var credit_hours : Double? //Stores the number of Credit Hours of the class
+    
+    init(class_name : String, grade : String, credit_hours : Double){
+        self.class_name = class_name
+        self.grade = grade
+        self.credit_hours = credit_hours
+        UpdateGradeWorth()
+    }
     
     func outputGradeWorth() -> String {
         
