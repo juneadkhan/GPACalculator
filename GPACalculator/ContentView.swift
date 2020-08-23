@@ -56,6 +56,8 @@ struct ContentView: View {
                           
                             
                         } //END OF FOR EACH
+                        .onDelete(perform: Delete)
+                        .onMove(perform: Move)
                         //On Delete/On Move will go here
                     
                 } //END OF SECTION
@@ -77,6 +79,16 @@ struct ContentView: View {
            
         } //END OF VSSTACK
     } //End of Body
+    
+    func Move(from source: IndexSet, to destination: Int){
+           store.classStorage.move(fromOffsets: source, toOffset: destination)
+       }
+       
+       func Delete(offsets: IndexSet) {
+           store.classStorage.remove(atOffsets: offsets)
+            }
+
+    
 } //END OF CONTENT VIEW
 
 
