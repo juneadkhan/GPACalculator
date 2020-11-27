@@ -7,12 +7,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 
 struct ContentView: View {
     
     @EnvironmentObject var store : Semester //Stores the Class Data
     @State var showingSheet = false //Controls if the add class sheet is showing.
+    
+    let realm = try! Realm()
 
     var body: some View {
         //This is the entire Stack container
@@ -47,10 +50,10 @@ struct ContentView: View {
                                         Text(indv.grade!)
                                             .font(.subheadline)
                                             .foregroundColor(.secondary)
-                                        Text(indv.outputGradeWorth())
+                                        Text(indv.outputCreditHours())
                                             .font(.footnote)
+                             
                                                 } //END OF HSTACK
-                                
 
                             } //END OF VSTACK
                           

@@ -38,6 +38,9 @@ class Semester : ObservableObject, Identifiable {
         var creditHours = 0.0;
         var Score = 0.0;
         for Class in classStorage{
+            if (Class.grade_num == -1){
+                continue;
+            }
             creditHours += Class.credit_hours!
             Score += Class.grade_num! * Class.credit_hours!
         }
@@ -50,12 +53,19 @@ class Semester : ObservableObject, Identifiable {
         var creditHours = 0.0;
         var Score = 0.0;
         for Class in classStorage{
+            if (Class.grade_num == -1){
+                  continue;
+            }
             creditHours += Class.credit_hours!
             Score += Class.grade_num! * Class.credit_hours!
         }
         SemesterGPA = Score/creditHours
 
         //Formats the GPA to 3.d.p
+        if (SemesterGPA.isNaN){
+            return "0.000"
+        }
+        
         return String.localizedStringWithFormat("%.3f", SemesterGPA);
     }
     

@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8AB4FF31D02523F546AA031E /* Pods_GPACalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C5DB189B3417DC3253161E /* Pods_GPACalculator.framework */; };
 		A011CCAA24F2979500C30706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCA924F2979500C30706 /* AppDelegate.swift */; };
 		A011CCAC24F2979500C30706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCAB24F2979500C30706 /* SceneDelegate.swift */; };
 		A011CCAE24F2979500C30706 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCAD24F2979500C30706 /* ContentView.swift */; };
@@ -17,7 +16,25 @@
 		A011CCBE24F29B0300C30706 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCBD24F29B0300C30706 /* Classes.swift */; };
 		A011CCC024F29DE500C30706 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCBF24F29DE500C30706 /* Semester.swift */; };
 		A011CCC224F2AA4200C30706 /* AddNewClassUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCC124F2AA4200C30706 /* AddNewClassUIView.swift */; };
+		A0F077CE2528EE26005663BB /* Pods_GPACalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F077CD2528EE26005663BB /* Pods_GPACalculator.framework */; };
+		A0F077CF2528EE26005663BB /* Pods_GPACalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0F077CD2528EE26005663BB /* Pods_GPACalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0F077D22528F034005663BB /* SemesterRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F077D12528F034005663BB /* SemesterRealm.swift */; };
+		A0F077D4252933C8005663BB /* BindableResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F077D3252933C8005663BB /* BindableResults.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0F077D02528EE26005663BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0F077CF2528EE26005663BB /* Pods_GPACalculator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A011CCA624F2979500C30706 /* GPAce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPAce.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +48,13 @@
 		A011CCBD24F29B0300C30706 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		A011CCBF24F29DE500C30706 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		A011CCC124F2AA4200C30706 /* AddNewClassUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClassUIView.swift; sourceTree = "<group>"; };
+		A0F077B92528EC8E005663BB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F077BA2528EC8E005663BB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F077C72528EDE8005663BB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F077C82528EDE8005663BB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F077CD2528EE26005663BB /* Pods_GPACalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GPACalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F077D12528F034005663BB /* SemesterRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterRealm.swift; sourceTree = "<group>"; };
+		A0F077D3252933C8005663BB /* BindableResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableResults.swift; sourceTree = "<group>"; };
 		C0BD3F5F0DB444DC2E93390E /* Pods-GPACalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPACalculator.debug.xcconfig"; path = "Target Support Files/Pods-GPACalculator/Pods-GPACalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		F4C5DB189B3417DC3253161E /* Pods_GPACalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPACalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB9623798F6BBA7D7F4C654 /* Pods-GPACalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPACalculator.release.xcconfig"; path = "Target Support Files/Pods-GPACalculator/Pods-GPACalculator.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AB4FF31D02523F546AA031E /* Pods_GPACalculator.framework in Frameworks */,
+				A0F077CE2528EE26005663BB /* Pods_GPACalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,13 +78,17 @@
 				C0BD3F5F0DB444DC2E93390E /* Pods-GPACalculator.debug.xcconfig */,
 				FAB9623798F6BBA7D7F4C654 /* Pods-GPACalculator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		6F3E611139D3E5BCE2D125A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0F077CD2528EE26005663BB /* Pods_GPACalculator.framework */,
+				A0F077C72528EDE8005663BB /* Realm.framework */,
+				A0F077C82528EDE8005663BB /* RealmSwift.framework */,
+				A0F077B92528EC8E005663BB /* Realm.framework */,
+				A0F077BA2528EC8E005663BB /* RealmSwift.framework */,
 				F4C5DB189B3417DC3253161E /* Pods_GPACalculator.framework */,
 			);
 			name = Frameworks;
@@ -97,6 +125,8 @@
 				A011CCBD24F29B0300C30706 /* Classes.swift */,
 				A011CCBF24F29DE500C30706 /* Semester.swift */,
 				A011CCC124F2AA4200C30706 /* AddNewClassUIView.swift */,
+				A0F077D12528F034005663BB /* SemesterRealm.swift */,
+				A0F077D3252933C8005663BB /* BindableResults.swift */,
 			);
 			path = GPACalculator;
 			sourceTree = "<group>";
@@ -121,6 +151,7 @@
 				A011CCA324F2979500C30706 /* Frameworks */,
 				A011CCA424F2979500C30706 /* Resources */,
 				A58802D593EEFD2938FDF367 /* [CP] Embed Pods Frameworks */,
+				A0F077D02528EE26005663BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +257,8 @@
 			files = (
 				A011CCC224F2AA4200C30706 /* AddNewClassUIView.swift in Sources */,
 				A011CCAA24F2979500C30706 /* AppDelegate.swift in Sources */,
+				A0F077D22528F034005663BB /* SemesterRealm.swift in Sources */,
+				A0F077D4252933C8005663BB /* BindableResults.swift in Sources */,
 				A011CCAC24F2979500C30706 /* SceneDelegate.swift in Sources */,
 				A011CCBE24F29B0300C30706 /* Classes.swift in Sources */,
 				A011CCC024F29DE500C30706 /* Semester.swift in Sources */,

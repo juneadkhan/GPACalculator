@@ -75,7 +75,9 @@ struct AddNewClassUIView: View {
                                 }
                                 Group{
                                     
+                                Text("PS").tag("PS")
                                 Text("F").tag("F")
+
 
                                 }
 

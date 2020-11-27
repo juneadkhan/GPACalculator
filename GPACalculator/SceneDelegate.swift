@@ -8,20 +8,28 @@
 
 import UIKit
 import SwiftUI
+import RealmSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var store = Semester() //CREATES ENVIROMENT OBJECT THAT STORES CLASS INFORMATION
     var window: UIWindow?
+    
+    
+
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
 
+        
+        
+        
         /* Currently NOT NEEDED */
         //let contentView = ContentView()
 
@@ -31,6 +39,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(store))
             // ^^ Above line passed store into Content view as enviroment object
             self.window = window
+       
+            try! FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+
+            //REALM IMPLEMENTATION
+            let realm = try! Realm()
+            
+            print(Realm.Configuration.defaultConfiguration.fileURL)
+
+            //WRITE
+            var sem = SemesterRealm()
+            sem.GPA = "2.7"
+            sem.name = "COMP 411"
+
+            try! realm.write{
+                realm.add(sem)
+            }
+
+            let results = realm.objects(SemesterRealm.self)
+
+            print(results[0].name)
+
+            //END OF REALM
+        
+            
             window.makeKeyAndVisible()
         }
     }

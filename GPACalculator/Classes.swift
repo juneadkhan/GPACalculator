@@ -31,6 +31,11 @@ public class Classes : Identifiable {
         return grade_num!.description
     }
     
+    func outputCreditHours() -> String {
+        
+        return credit_hours!.description
+    }
+    
     func UpdateGrade(newGrade:String){
         self.grade = newGrade;
         UpdateGradeWorth()
@@ -63,6 +68,8 @@ public class Classes : Identifiable {
             self.grade_num = 1.0;
         case "F":
             self.grade_num = 0;
+        case "PS":
+            self.grade_num = -1;
         default:
             print("Some other character")
 
