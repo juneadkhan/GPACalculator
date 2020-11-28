@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import RealmSwift
 
 
 struct ContentView: View {
@@ -15,8 +14,6 @@ struct ContentView: View {
     @EnvironmentObject var store : Semester //Stores the Class Data
     @State var showingSheet = false //Controls if the add class sheet is showing.
     
-    let realm = try! Realm()
-
     var body: some View {
         //This is the entire Stack container
         VStack {
@@ -94,6 +91,8 @@ struct ContentView: View {
 
                 }
             } //End of VStack
+           
+
            
         } //END OF VSSTACK
     } //End of Body

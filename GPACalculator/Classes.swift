@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Classes : Identifiable {
+public class Classes : Identifiable, Codable {
     
     //A Classes acts an individual class. e.g. "COMP 411"
     

@@ -13,19 +13,48 @@ import Combine
 class Semester : ObservableObject, Identifiable {
 
     @Published var classStorage : [Classes] { //Stores all the classses taken
-        didSet { didChange.send() }
+        /*didSet { didChange.send() */
+        
+        didSet{ let encoder = JSONEncoder()
+            
+            if let encoded = try?
+                encoder.encode(classStorage){
+                UserDefaults.standard.set(encoded, forKey: "classStorage")
+        }
+    }
 
     }
-    var SemesterGPA : Double; //Variable for the Overall GPA
+    var SemesterGPA : Double //Variable for the Overall GPA
     var didChange = PassthroughSubject<Void,Never>()
 
+    init(){
+        self.SemesterGPA = 0.000
+
+        if let items = UserDefaults.standard.data(forKey: "classStorage")
+        {
+            let decoder = JSONDecoder()
+            
+            if let decoded = try?
+                decoder.decode([Classes].self, from: items){
+                self.classStorage = decoded
+                return
+            }
+        }
+        
+        self.classStorage = []
+
+    }
     
+    
+    /*
     init() {
         
         classStorage = []
         SemesterGPA = 0
 
        }
+ 
+    */
     
     //Adds new classs to classStorage array
     func addClass(newClass : Classes) {

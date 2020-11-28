@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EasyStash
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

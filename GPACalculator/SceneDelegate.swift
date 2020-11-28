@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftUI
-import RealmSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -40,29 +39,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // ^^ Above line passed store into Content view as enviroment object
             self.window = window
        
-            try! FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
-
-            //REALM IMPLEMENTATION
-            let realm = try! Realm()
-            
-            print(Realm.Configuration.defaultConfiguration.fileURL)
-
-            //WRITE
-            var sem = SemesterRealm()
-            sem.GPA = "2.7"
-            sem.name = "COMP 411"
-
-            try! realm.write{
-                realm.add(sem)
-            }
-
-            let results = realm.objects(SemesterRealm.self)
-
-            print(results[0].name)
-
-            //END OF REALM
-        
-            
             window.makeKeyAndVisible()
         }
     }
