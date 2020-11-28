@@ -44,15 +44,25 @@ struct ContentView: View {
                            indv in
                             
                             VStack (alignment: .leading) {
+                                
                                 Text(indv.class_name!)
+                                    .font(.headline)
                                 //Individual details per CLASS
                                     HStack {
+                                        
                                         Text(indv.grade!)
                                             .font(.subheadline)
                                             .foregroundColor(.secondary)
                                         Text(indv.outputCreditHours())
                                             .font(.footnote)
                              
+                                        
+                                        // CODE TO ADD SEMESTER TO RIGHT HAND SIDE
+                                        /*Spacer()
+                                        
+                                        Text("Fall 2020")
+                                            .font(.caption) */
+
                                                 } //END OF HSTACK
 
                             } //END OF VSTACK
@@ -68,8 +78,11 @@ struct ContentView: View {
                 .navigationBarTitle(Text("GPA Calculator")) //Sets up the Title of the App
                 .navigationBarItems(trailing: EditButton()) //Adds the EditButton to the App
                 .listStyle(GroupedListStyle())
+                .environment(\.horizontalSizeClass, .regular)
+
                 //Makes the style of List, Grouped.
 
+ 
             
             } //End of Navigation View
             
@@ -77,6 +90,8 @@ struct ContentView: View {
                 Section{
                     Text("Current GPA is: ")
                     Text(store.printGPA())
+                    .font(.headline)
+
                 }
             } //End of VStack
            

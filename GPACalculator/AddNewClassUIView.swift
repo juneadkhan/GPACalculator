@@ -56,7 +56,8 @@ struct AddNewClassUIView: View {
                                 Text("3").tag(3.0)
                                 Text("4").tag(4.0)
                                 //Takes input number from Picker and tags it a corresponding value
-                            }
+                                }
+
                         }
                         
                         Section{
@@ -101,6 +102,8 @@ struct AddNewClassUIView: View {
                     
                     .navigationBarTitle("Add New Class")
                     .listStyle(GroupedListStyle())
+                    .environment(\.horizontalSizeClass, .regular)
+
                     
 
 
