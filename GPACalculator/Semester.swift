@@ -26,6 +26,10 @@ class Semester : ObservableObject, Identifiable {
     }
     var SemesterGPA : Double //Variable for the Overall GPA
     var didChange = PassthroughSubject<Void,Never>()
+    
+    var catergories: [Int: [Classes]] {
+        Dictionary(grouping: classStorage, by: {$0.category.rawValue})
+    }
 
     init(){
         self.SemesterGPA = 0.000
@@ -96,6 +100,13 @@ class Semester : ObservableObject, Identifiable {
         }
         
         return String.localizedStringWithFormat("%.3f", SemesterGPA);
+    }
+    
+    func removeClass(objectToRemove : Classes){
+        
+        if let index = classStorage.firstIndex(where: { $0 as AnyObject === objectToRemove as AnyObject}){
+            classStorage.remove(at: index)
+        }
     }
     
 }

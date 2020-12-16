@@ -11,29 +11,62 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.presentationMode) var PresentationMode: Binding<PresentationMode>
     @EnvironmentObject var store : Semester //Stores the Class Data
     @State var showingSheet = false //Controls if the add class sheet is showing.
     
     var body: some View {
         //This is the entire Stack container
-        VStack {
+        //VStack {
            
             NavigationView {
                 
-                
+                /*
                 List {
                     /* ADD CLASS BUTTON SECTION*/
                     //This is the Section for the Add Class Button
-                    Section {
-                        Button(action: {                                self.showingSheet.toggle() }) { //Toggles the showingSheet
-                            Text("Add Class")
+       
+                } //REMOVE AFTER
+                */
+                VStack{
+                    List{
+                        
+                        ForEach(store.catergories.keys.sorted().reversed(), id: \.self){key in
+                            CategoryRow(items: self.store.catergories[key]!)
+                            }
+                            
                         }
-                        .sheet(isPresented: $showingSheet){
-                                           AddNewClassUIView().environmentObject(self.store)
-                                       
-                    }
-                    } //END OF SECTION
+                        
                     
+                        VStack {
+                            Section{
+                                Text("Current GPA is: ".uppercased())
+                                    .font(.footnote)
+                                Text(store.printGPA())
+                                    .font(.system(size: 30, weight: .bold, design: .rounded))
+
+
+                            }
+                        
+                        } //End of VStack
+                }
+                        
+                .navigationBarTitle("GPA Calculator")
+            .navigationBarItems(trailing:
+                Button(action: {                                self.showingSheet.toggle() }) { //Toggles the showingSheet
+                        Text("Add Class")
+                    }
+                    .sheet(isPresented: $showingSheet){
+                                       AddNewClassUIView().environmentObject(self.store)
+                                   
+                }
+                
+                )
+
+                    
+                
+                
+                    /*
                     /* CLASS LIST SECTION*/
                     //This is the section for the list of classes taken
                     Section {
@@ -83,20 +116,20 @@ struct ContentView: View {
             
             } //End of Navigation View
             
-            VStack {
-                Section{
-                    Text("Current GPA is: ")
-                    Text(store.printGPA())
-                    .font(.headline)
+        */
 
-                }
-            } //End of VStack
-           
+           /*
 
            
         } //END OF VSSTACK
+ 
+ */
+                
+ 
     } //End of Body
     
+
+        /*
     func Move(from source: IndexSet, to destination: Int){
            store.classStorage.move(fromOffsets: source, toOffset: destination)
        }
@@ -105,7 +138,8 @@ struct ContentView: View {
            store.classStorage.remove(atOffsets: offsets)
             }
 
-    
+*/
+    }
 } //END OF CONTENT VIEW
 
 

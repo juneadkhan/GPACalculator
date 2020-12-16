@@ -16,6 +16,8 @@
 		A011CCBE24F29B0300C30706 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCBD24F29B0300C30706 /* Classes.swift */; };
 		A011CCC024F29DE500C30706 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCBF24F29DE500C30706 /* Semester.swift */; };
 		A011CCC224F2AA4200C30706 /* AddNewClassUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011CCC124F2AA4200C30706 /* AddNewClassUIView.swift */; };
+		A048EEDA258958A800173EA2 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048EED9258958A800173EA2 /* CategoryRow.swift */; };
+		A048EEDC25895B7B00173EA2 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048EEDB25895B7B00173EA2 /* CategoryItem.swift */; };
 		A0F077CF2528EE26005663BB /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		A011CCBD24F29B0300C30706 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		A011CCBF24F29DE500C30706 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		A011CCC124F2AA4200C30706 /* AddNewClassUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClassUIView.swift; sourceTree = "<group>"; };
+		A048EED9258958A800173EA2 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		A048EEDB25895B7B00173EA2 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		A0F077B92528EC8E005663BB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F077BA2528EC8E005663BB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F077C72528EDE8005663BB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,8 @@
 				A011CCA924F2979500C30706 /* AppDelegate.swift */,
 				A011CCAB24F2979500C30706 /* SceneDelegate.swift */,
 				A011CCAD24F2979500C30706 /* ContentView.swift */,
+				A048EED9258958A800173EA2 /* CategoryRow.swift */,
+				A048EEDB25895B7B00173EA2 /* CategoryItem.swift */,
 				A011CCAF24F2979900C30706 /* Assets.xcassets */,
 				A011CCB424F2979900C30706 /* LaunchScreen.storyboard */,
 				A011CCB724F2979900C30706 /* Info.plist */,
@@ -197,8 +203,10 @@
 			files = (
 				A011CCC224F2AA4200C30706 /* AddNewClassUIView.swift in Sources */,
 				A011CCAA24F2979500C30706 /* AppDelegate.swift in Sources */,
+				A048EEDC25895B7B00173EA2 /* CategoryItem.swift in Sources */,
 				A011CCAC24F2979500C30706 /* SceneDelegate.swift in Sources */,
 				A011CCBE24F29B0300C30706 /* Classes.swift in Sources */,
+				A048EEDA258958A800173EA2 /* CategoryRow.swift in Sources */,
 				A011CCC024F29DE500C30706 /* Semester.swift in Sources */,
 				A011CCAE24F2979500C30706 /* ContentView.swift in Sources */,
 			);
