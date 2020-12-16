@@ -36,7 +36,12 @@ struct ContentView: View {
                             }
                             
                         }
-                        
+                    .listStyle(PlainListStyle())
+                    .onAppear {
+                        UITableView.appearance().backgroundColor = UIColor.systemBackground
+                    }
+
+                    
                     
                         VStack {
                             Section{

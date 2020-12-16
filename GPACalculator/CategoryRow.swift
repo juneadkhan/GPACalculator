@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct CategoryRow: View {
     
@@ -26,21 +27,23 @@ struct CategoryRow: View {
                     
                     ForEach(items) { indv in
                         
-                        HStack{
+                        
                         
                         CategoryItem(course: indv)
                         
-                        }
+                        
                         .contextMenu{
+                            VStack{
                             Button(action: {
                                 //guard let index = self.items.firstIndex(of: indv) else { return }
                                 self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == indv.id })!)})
                             {
                                 Text("Delete")
-                                    .foregroundColor(Color.red)
-                                Image(systemName: "trash.fill")
-                                    .foregroundColor(Color.red)
+                                    .foregroundColor(.red)
+                                Image(systemName: "trash")
+                                    .foregroundColor(.red)
                                 }
+                            }
                         }
                         
                     }
@@ -65,6 +68,7 @@ struct CategoryRow_Previews: PreviewProvider {
     static var classes = Semester().classStorage
     
     static var previews: some View {
-        CategoryRow(items: Array(arrayLiteral: Classes(class_name: "COMP 401", grade: "A", credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0)))
+        CategoryRow(items: Array(arrayLiteral: Classes(class_name: "COMP 401", grade: "A", credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0), Classes(class_name: "COMP 401", grade: "A", credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0)))
     }
 }
+

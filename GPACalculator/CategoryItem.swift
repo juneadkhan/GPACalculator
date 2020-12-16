@@ -49,7 +49,6 @@ struct CategoryItem: View {
         }
     .frame(width: 120, height: 100)
     .cornerRadius(15)
-    .padding(.leading, 5)
 
         /*
         VStack {
