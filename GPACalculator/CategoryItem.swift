@@ -11,6 +11,8 @@ import SwiftUI
 struct CategoryItem: View {
     
     var course: Classes
+    @State private var showingActionSheet = false
+    @EnvironmentObject var store : Semester //Stores the Class Data
     
     var body: some View {
         
@@ -49,63 +51,42 @@ struct CategoryItem: View {
         }
     .frame(width: 120, height: 100)
     .cornerRadius(15)
+        .onLongPressGesture{
+            self.showingActionSheet = true;
+             }.actionSheet(isPresented: self.$showingActionSheet){
+                ActionSheet(title: Text("Choose Action"), buttons: [
+                 
+                     ActionSheet.Button.destructive(Text("Delete Class"), action: {
+                         
+                         print("INDV ID")
+                        print(self.course.id)
+                        print(self.course.class_name)
+                         
+                         print("CLASS IDS")
+                         for i in self.store.classStorage{
+                             
+                             print(i.id, " --  ", i.class_name)
+                             
+                         }
+                         
+                         
+                        self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!) }
+                         
+                         ),
+                     ActionSheet.Button.cancel()
+                     
+                 
+                 ])
+                 }
 
-        /*
-        VStack {
-                /*
-                   Image("swiftui-button")
-                       .resizable()
-                       .aspectRatio(contentMode: .fit)
-        */
-                   
-        
-            HStack {
-                       VStack(alignment: .leading) {
-                      
-                           Text("COMP 401")
-                               .font(.title)
-                               .fontWeight(.black)
-                               .foregroundColor(.primary)
-                               .lineLimit(3)
-                        HStack{
-                            Text("B-")
-                            .font(.headline)
-                            .foregroundColor(.secondary)
-                            
-                            Spacer()
-                            
-                            Text("4.0")
-                                                .font(.headline)
-                                                .foregroundColor(.secondary)
-                            
-                        }
-       
-                       }
-                       .layoutPriority(100)
-        
-                       Spacer()
-                   }
-                   .padding()
-               }
-               .cornerRadius(10)
-               .overlay(
-                   RoundedRectangle(cornerRadius: 10)
-                       .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
-               )
-               .padding([.top, .horizontal])
-           }
-        
-        
-        /*
-        VStack(alignment: .leading){
-            Text(course.class_name)
-                .font(.caption)
-        }
-        .padding(.leading, 15)
-         */
- 
- */
+     
     }
+    
+    
+    func Delete(at index: Int) {
+        store.classStorage.remove(at: index)
+    }
+    
 }
 
 struct CategoryItem_Previews: PreviewProvider {
