@@ -11,6 +11,7 @@ import UIKit
 
 struct CategoryRow: View {
     
+    @State private var showingActionSheet = false
     @EnvironmentObject var store : Semester //Stores the Class Data
     var items: [Classes]
     
@@ -32,6 +33,8 @@ struct CategoryRow: View {
                         CategoryItem(course: indv)
                         
                         
+                        
+                    /*
                         .contextMenu{
                             VStack{
                             Button(action: {
@@ -44,7 +47,7 @@ struct CategoryRow: View {
                                     .foregroundColor(.red)
                                 }
                             }
-                        }
+                        } */
                         
                     }
                 }
@@ -54,10 +57,7 @@ struct CategoryRow: View {
             .frame(height:105)
         }
     }
-    
-    func Delete(at index: Int) {
-        store.classStorage.remove(at: index)
-    }
+
 
 }
 
