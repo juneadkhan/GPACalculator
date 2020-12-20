@@ -13,6 +13,7 @@ struct ContentView: View {
     
     @Environment(\.presentationMode) var PresentationMode: Binding<PresentationMode>
     @EnvironmentObject var store : Semester //Stores the Class Data
+    @EnvironmentObject var defaultSettings : Settings
     @State var showingSheet = false //Controls if the add class sheet is showing.
     
     var body: some View {

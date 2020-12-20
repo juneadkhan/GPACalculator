@@ -11,7 +11,6 @@ import Combine
 
 //A Semester object is holds a series of Classes objects
 class Semester : ObservableObject, Identifiable {
-
     @Published var classStorage : [Classes] { //Stores all the classses taken
         /*didSet { didChange.send() */
         

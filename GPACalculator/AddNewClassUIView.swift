@@ -23,22 +23,20 @@ struct AddNewClassUIView: View {
 
     @Environment(\.presentationMode) var PresentationMode: Binding<PresentationMode>
     
+    
     @EnvironmentObject var store : Semester //Brings in Environment Object
-
     
     @State var value: String = "A" //DEFAULT
     @State var creditHours: Double = 3 //DEFAULT
     @State var className: String = "" //DEFAULT
-    @State var semesterName: String = "Fall 2020" //DEFAULT
-    @State var categoryName: Classes.Category = Classes.Category.Spring2021 //DEFAULT
+    @State var categoryName: Classes.Category = Classes.Category(rawValue: UserDefaults.standard.integer(forKey: "Semester")) ?? Classes.Category.Spring2021 //DEFAULT
     @State var colourName: Double = 2 //DEFAULT
 
     @State private var conditionsMet = false //DEFAULT
 
 
     var body: some View {
-
-
+        
         VStack {
             VStack {
               
@@ -93,8 +91,6 @@ struct AddNewClassUIView: View {
                         // Category Picker
                         Section{
                                  Picker(selection: $categoryName, label: Text("Semester")) {
-                                     
-                                    
                                     
                                     Group{
                                         Text("Fall 2017").tag(Classes.Category.Fall2017)
@@ -141,6 +137,7 @@ struct AddNewClassUIView: View {
                                  }
                         }
                         
+
                         // Colour Picker
                                   Section{
                                            Picker(selection: $colourName, label: Text("Color")) {
@@ -197,6 +194,10 @@ struct AddNewClassUIView: View {
 }
     
     func addClass(){
+        
+        //Save Semester entered for future default setting
+        UserDefaults.standard.set(self.categoryName.rawValue, forKey: "Semester")
+            
         
         store.classStorage.append(Classes(class_name: className, grade: value, credit_hours: creditHours, category: categoryName, colour: colourName))
 

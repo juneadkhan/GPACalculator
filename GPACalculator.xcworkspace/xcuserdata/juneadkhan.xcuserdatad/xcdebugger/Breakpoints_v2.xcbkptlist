@@ -43,5 +43,251 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GPACalculator/AddNewClassUIView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "categoryName"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - 8055b89bc6aefb8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of GPAce.AddNewClassUIView.className : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - 45899ca995d3678"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.className.getter : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - d24b807118460674"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.className.setter : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - b6d8b48792ee6267"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.className.modify : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - 8facef18fe952074"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.className.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - d5e4f3e5da11093c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.$className.getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "251">
+               </Location>
+               <Location
+                  uuid = "B7E88942-78EC-4ECF-BF7D-A15C2D065D6B - a3c4ae8bc615d41e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.init() -&gt; GPAce.AddNewClassUIView"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "330">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GPACalculator/AddNewClassUIView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "AddNewClassUIView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - 2aafa9daeac64955"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of GPAce.AddNewClassUIView.semesterName : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - ff9ca276681fa90f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.semesterName.getter : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - 40e4dd54d108b91b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.semesterName.setter : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - 2d60a43d9e30850a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.semesterName.modify : Swift.String"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - 4da27d44451aeb1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.semesterName.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - 72776c175ad96cc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.$semesterName.getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "251">
+               </Location>
+               <Location
+                  uuid = "3373C6B0-8B0D-442C-A866-83C7B1048C99 - a3c4ae8bc615d41e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPAce.AddNewClassUIView.init() -&gt; GPAce.AddNewClassUIView"
+                  moduleName = "GPAce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juneadkhan/Desktop/GPACalculator/GPACalculator/AddNewClassUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "386">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

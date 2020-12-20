@@ -51,6 +51,22 @@ struct CategoryItem: View {
         }
     .frame(width: 120, height: 100)
     .cornerRadius(15)
+    .contextMenu{
+           VStack{
+           Button(action: {
+               //guard let index = self.items.firstIndex(of: indv) else { return }
+            self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)})
+           {
+               Text("Delete")
+                   .foregroundColor(.red)
+               Image(systemName: "trash")
+                   .foregroundColor(.red)
+               }
+           }
+       }
+    
+            
+        /*
         .onLongPressGesture{
             self.showingActionSheet = true;
              }.actionSheet(isPresented: self.$showingActionSheet){
@@ -70,14 +86,17 @@ struct CategoryItem: View {
                          }
                          
                          
-                        self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!) }
+                        self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)
+                        
+                        self.showingActionSheet = false
+                     }
                          
                          ),
                      ActionSheet.Button.cancel()
                      
                  
                  ])
-                 }
+                 } */
 
      
     }
