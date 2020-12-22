@@ -19,6 +19,8 @@ class Semester : ObservableObject, Identifiable {
             if let encoded = try?
                 encoder.encode(classStorage){
                 UserDefaults.standard.set(encoded, forKey: "classStorage")
+                print("DEFO DEFO GOT HERE")
+
         }
     }
 
@@ -40,6 +42,7 @@ class Semester : ObservableObject, Identifiable {
             if let decoded = try?
                 decoder.decode([Classes].self, from: items){
                 self.classStorage = decoded
+                print("GOT HERE")
                 return
             }
         }

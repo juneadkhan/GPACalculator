@@ -9,7 +9,9 @@
 import UIKit
 import Foundation
 
-public struct Classes : Identifiable, Codable {
+//Struct - Saves LONG TERM - Doesnt show up SHORT TERM
+//Class - No save Long Term - DOES SHOW UP SHORT TERM
+public class Classes : Identifiable, Codable {
     
     //A Classes acts an individual class. e.g. "COMP 411"
     
@@ -61,6 +63,16 @@ public struct Classes : Identifiable, Codable {
         
     }
     
+    init(class_name : String){
+        self.class_name = class_name
+        self.grade = ""
+        self.credit_hours = 2.0
+        self.category = Classes.Category.Fall2017
+        self.colour = 1
+        UpdateGradeWorth()
+
+        
+    }
     
     init(class_name : String, grade : String, credit_hours : Double, category : Category, colour: Double){
         self.class_name = class_name
@@ -82,16 +94,16 @@ public struct Classes : Identifiable, Codable {
         return credit_hours!.description
     }
     
-    mutating func UpdateGrade(newGrade:String){
+    func UpdateGrade(newGrade:String){
         self.grade = newGrade;
         UpdateGradeWorth()
     }
     
-    mutating func UpdateClassName(newName:String){
+    func UpdateClassName(newName:String){
         self.class_name = newName;
     }
     
-    mutating func UpdateGradeWorth(){
+    func UpdateGradeWorth(){
         
         switch grade{
         case "A":
@@ -106,10 +118,12 @@ public struct Classes : Identifiable, Codable {
             self.grade_num = 2.7;
         case "C+":
             self.grade_num = 2.3;
+        case "C":
+            self.grade_num = 2.0;
         case "C-":
             self.grade_num = 2.0;
         case "D+":
-            self.grade_num = 1.3;
+            self.grade_num = 1.7;
         case "D":
             self.grade_num = 1.0;
         case "F":
@@ -210,9 +224,31 @@ public struct Classes : Identifiable, Codable {
         
     }
     
+    func getClassName() -> String{
+        return class_name
+    }
+    
+    
+    func editClass(class_name : String, grade : String, credit_hours : Double, category : Category, colour: Double){
+        
+        self.class_name = class_name
+        self.grade = grade
+        self.credit_hours = credit_hours
+        self.category = category
+        self.colour = colour
+    
+        UpdateGradeWorth()
+    }
+    
 }
 
 extension Classes : Comparable{
+    public static func == (lhs: Classes, rhs: Classes) -> Bool {
+        lhs.category.rawValue == rhs.category.rawValue
+
+    }
+    
+    
     public static func < (lhs: Classes, rhs: Classes) -> Bool {
         lhs.category.rawValue < rhs.category.rawValue
     }

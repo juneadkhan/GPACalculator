@@ -11,8 +11,10 @@ import SwiftUI
 struct CategoryItem: View {
     
     var course: Classes
+    @State private var showingEditSheet = false
     @State private var showingActionSheet = false
     @EnvironmentObject var store : Semester //Stores the Class Data
+    var index : Int { store.classStorage.firstIndex(where: { $0.id == course.id })! }
     
     var body: some View {
         
@@ -21,10 +23,13 @@ struct CategoryItem: View {
             
             VStack {
                 HStack{
+                    
                     Text(course.grade)
                         .font(.system(size: 30, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .padding(.leading, 10)
+                    
+               
                   Spacer()
                     
                 }
@@ -48,57 +53,106 @@ struct CategoryItem: View {
                       
                   }
             }
+            
         }
     .frame(width: 120, height: 100)
     .cornerRadius(15)
+    .onTapGesture {
+            self.showingActionSheet = true
+        
+        for i in self.store.classStorage{
+                        print(i.class_name)
+                        
+                    }
+                    
+                    print("Class Name is : ", self.course.class_name)
+                   
+            
+        }
+        .actionSheet(isPresented: $showingActionSheet){
+            ActionSheet(title: Text("Choose Option"), buttons: [
+            
+                .default(Text("Edit"), action: {
+                     
+                    
+    
+                    self.showingEditSheet.toggle()
+                    
+                }),
+                
+                .destructive(Text("Delete"), action: {
+                    
+                     self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)
+                    
+                }),
+                
+                .cancel()
+            
+            
+            ])
+        } .sheet(isPresented: $showingEditSheet){
+            EditClassUIView(course: self.course).environmentObject(self.store)
+        }
+        
+        
+        
+        
+        
+    /*
     .contextMenu{
            VStack{
+            
+            Button(action: {
+                
+                
+                let index = self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!
+                
+                self.store.classStorage[index].editClass(class_name: "CHEM 103", grade: "A", credit_hours: 4.0, category: Classes.Category.Fall2018, colour: 5)
+                
+            }
+            ){Text("Test Button")}
+            
+            Button(action: {self.showingEditSheet.toggle()
+                
+                for i in self.store.classStorage{
+                    print(i.class_name)
+                    
+                }
+                
+                print("Class Name is : ", self.course.class_name)
+                
+            }){
+                HStack{
+                    Text("Edit")
+                    Image(systemName: "pencil")
+                }
+                
+            }
+            .sheet(isPresented: $showingEditSheet){
+                EditClassUIView(course: self.course).environmentObject(self.store)
+               
+            }
+            
+            
+
+            
+            
            Button(action: {
                //guard let index = self.items.firstIndex(of: indv) else { return }
             self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)})
            {
+            HStack{
                Text("Delete")
                    .foregroundColor(.red)
                Image(systemName: "trash")
                    .foregroundColor(.red)
+            }
                }
+                    
            }
        }
-    
-            
-        /*
-        .onLongPressGesture{
-            self.showingActionSheet = true;
-             }.actionSheet(isPresented: self.$showingActionSheet){
-                ActionSheet(title: Text("Choose Action"), buttons: [
-                 
-                     ActionSheet.Button.destructive(Text("Delete Class"), action: {
-                         
-                         print("INDV ID")
-                        print(self.course.id)
-                        print(self.course.class_name)
-                         
-                         print("CLASS IDS")
-                         for i in self.store.classStorage{
-                             
-                             print(i.id, " --  ", i.class_name)
-                             
-                         }
-                         
-                         
-                        self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)
-                        
-                        self.showingActionSheet = false
-                     }
-                         
-                         ),
-                     ActionSheet.Button.cancel()
-                     
-                 
-                 ])
-                 } */
+ */
 
-     
     }
     
     
