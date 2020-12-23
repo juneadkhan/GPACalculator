@@ -16,13 +16,34 @@ struct EditClassUIView: View {
     var course: Classes
     @EnvironmentObject var store : Semester //Brings in Environment Object
     
-    @State var value: String = "A" //DEFAULT
-    @State var creditHours: Double = 3 //DEFAULT
-    @State var className: String = "" //DEFAULT
-    @State var categoryName: Classes.Category = Classes.Category(rawValue: UserDefaults.standard.integer(forKey: "Semester")) ?? Classes.Category.Spring2021 //DEFAULT
-    @State var colourName: Double = 2 //DEFAULT
+    @State var value: String //DEFAULT
+    @State var creditHours: Double //DEFAULT
+    @State var className: String //DEFAULT
+    @State var categoryName: Classes.Category//DEFAULT
+    @State var colourName: Double //DEFAULT
 
     @State private var conditionsMet = false //DEFAULT
+    
+    init(course: Classes){
+        
+        self.course = course
+        
+        self._value = State<String>(initialValue: course.grade)
+        
+        self._creditHours = State<Double>(initialValue: course.credit_hours ?? 4)
+        
+        self._className = State<String>(initialValue: course.class_name)
+        
+        self._categoryName = State<Classes.Category>(initialValue: course.category)
+        
+        self._colourName = State<Double>(initialValue: course.colour ?? 2)
+        /*
+        self.categoryName = course.category
+        self.creditHours = course.credit_hours ?? 3
+        self.colourName = course.colour ?? 2
+        self.value = course.grade
+         */
+    }
 
 
     var body: some View {

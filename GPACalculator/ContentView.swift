@@ -38,7 +38,7 @@ struct ContentView: View {
                         }
                     .listStyle(PlainListStyle())
                     .onAppear {
-                        UITableView.appearance().backgroundColor = UIColor.systemBackground
+                        UITableView.appearance().separatorStyle = .none
                     }
 
                     
@@ -54,11 +54,29 @@ struct ContentView: View {
                             }
                         
                         } //End of VStack
+                        
                 }
                         
                 .navigationBarTitle("GPA Calculator")
             .navigationBarItems(trailing:
-                Button(action: {                                self.showingSheet.toggle() }) { //Toggles the showingSheet
+                Button(action: {
+                    
+                    print("ADD ACTIVATED")
+                    for i in self.store.classStorage{
+                       
+                        print(i.class_name)
+                                
+                    }
+                    
+                    
+                    self.showingSheet.toggle()
+                    
+                    
+                    
+                    
+                    
+                }) { //Toggles the showingSheet
+                    
                         Text("Add Class")
                     }
                     .sheet(isPresented: $showingSheet){

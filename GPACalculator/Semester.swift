@@ -64,7 +64,8 @@ class Semester : ObservableObject, Identifiable {
     
     //Adds new classs to classStorage array
     func addClass(newClass : Classes) {
-        classStorage.append(newClass);
+        classStorage.append(newClass)
+        updateView()
     }
     
     //Method for calculating GPA
@@ -109,6 +110,10 @@ class Semester : ObservableObject, Identifiable {
         if let index = classStorage.firstIndex(where: { $0 as AnyObject === objectToRemove as AnyObject}){
             classStorage.remove(at: index)
         }
+    }
+    
+    func updateView(){
+        self.objectWillChange.send()
     }
     
 }

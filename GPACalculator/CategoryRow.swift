@@ -28,11 +28,11 @@ struct CategoryRow: View {
                     
                     ForEach(items) { indv in
                         
+                        VStack{
                         
+                            CategoryItem(course: indv).environmentObject(self.store)
                         
-                        CategoryItem(course: indv)
-                        
-                        
+                        }
                         
                     /*
                         .contextMenu{

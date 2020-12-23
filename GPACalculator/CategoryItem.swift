@@ -59,13 +59,14 @@ struct CategoryItem: View {
     .cornerRadius(15)
     .onTapGesture {
             self.showingActionSheet = true
-        
-        for i in self.store.classStorage{
-                        print(i.class_name)
+            print("EDIT MENU ACTIVATED")
+            for i in self.store.classStorage{
+               
+                print(i.class_name)
                         
-                    }
+            }
                     
-                    print("Class Name is : ", self.course.class_name)
+            print("Class Name is : ", self.course.class_name)
                    
             
         }
@@ -82,6 +83,15 @@ struct CategoryItem: View {
                 
                 .destructive(Text("Delete"), action: {
                     
+                    print("DELETE BUTTON CLICKED")
+                    for i in self.store.classStorage{
+                       
+                        print(i.class_name)
+                                
+                    }
+                            
+                    print("Class Name is : ", self.course.class_name)
+                    
                      self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)
                     
                 }),
@@ -93,65 +103,6 @@ struct CategoryItem: View {
         } .sheet(isPresented: $showingEditSheet){
             EditClassUIView(course: self.course).environmentObject(self.store)
         }
-        
-        
-        
-        
-        
-    /*
-    .contextMenu{
-           VStack{
-            
-            Button(action: {
-                
-                
-                let index = self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!
-                
-                self.store.classStorage[index].editClass(class_name: "CHEM 103", grade: "A", credit_hours: 4.0, category: Classes.Category.Fall2018, colour: 5)
-                
-            }
-            ){Text("Test Button")}
-            
-            Button(action: {self.showingEditSheet.toggle()
-                
-                for i in self.store.classStorage{
-                    print(i.class_name)
-                    
-                }
-                
-                print("Class Name is : ", self.course.class_name)
-                
-            }){
-                HStack{
-                    Text("Edit")
-                    Image(systemName: "pencil")
-                }
-                
-            }
-            .sheet(isPresented: $showingEditSheet){
-                EditClassUIView(course: self.course).environmentObject(self.store)
-               
-            }
-            
-            
-
-            
-            
-           Button(action: {
-               //guard let index = self.items.firstIndex(of: indv) else { return }
-            self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)})
-           {
-            HStack{
-               Text("Delete")
-                   .foregroundColor(.red)
-               Image(systemName: "trash")
-                   .foregroundColor(.red)
-            }
-               }
-                    
-           }
-       }
- */
 
     }
     
