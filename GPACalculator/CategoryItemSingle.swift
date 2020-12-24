@@ -1,30 +1,29 @@
 //
-//  CategoryItem.swift
+//  CategoryItemSingle.swift
 //  GPACalculator
 //
-//  Created by Junead Khan on 15/12/2020.
+//  Created by Junead Khan on 23/12/2020.
 //  Copyright © 2020 Junead Khan. All rights reserved.
 //
 
 import SwiftUI
 
-struct CategoryItem: View {
+struct CategoryItemSingle: View {
     
-    var course: Classes
     @State private var showingEditSheet = false
     @State private var showingActionSheet = false
     @EnvironmentObject var store : Semester //Stores the Class Data
-    var index : Int { store.classStorage.firstIndex(where: { $0.id == course.id })! }
+    var index = 0
     
     var body: some View {
     
             ZStack{
-                LinearGradient(gradient: Gradient(colors: [Color(course.getPrimColour()), Color(course.getSecColour())]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                LinearGradient(gradient: Gradient(colors: [Color(self.store.classStorage[0].getPrimColour()), Color(self.store.classStorage[0].getSecColour())]), startPoint: .bottomLeading, endPoint: .topTrailing)
                 
                 VStack {
                     HStack{
                         
-                        Text(course.grade)
+                        Text(self.store.classStorage[0].grade)
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                             .padding(.leading, 10)
@@ -35,7 +34,7 @@ struct CategoryItem: View {
                     }
                     
                     HStack{
-                        Text(course.class_name)
+                        Text(store.classStorage[0].class_name)
                               .font(.system(size: 16, weight: .semibold, design: .rounded))
                               .foregroundColor(.white)
                               .padding(.leading, 10)
@@ -44,7 +43,7 @@ struct CategoryItem: View {
                       }
                     
                     HStack{
-                        Text(course.outputCreditHours() + " Credits")
+                        Text(store.classStorage[0].outputCreditHours() + " Credits")
                             .font(.system(size: 10, weight: .regular, design: .rounded))
                               .foregroundColor(.white)
                               .padding(.leading, 10)
@@ -60,14 +59,7 @@ struct CategoryItem: View {
         .onTapGesture {
                 self.showingActionSheet = true
                 print("EDIT MENU ACTIVATED")
-                for i in self.store.classStorage{
-                   
-                    print(i.class_name)
-                            
-                }
-                        
-                print("Class Name is : ", self.course.class_name)
-                       
+             
                 
             }
             .actionSheet(isPresented: $showingActionSheet){
@@ -90,9 +82,9 @@ struct CategoryItem: View {
                                     
                         }
                                 
-                        print("Class Name is : ", self.course.class_name)
+                    
                         
-                         self.Delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)
+                         self.Delete(at: 0)
                         
                     }),
                     
@@ -101,7 +93,7 @@ struct CategoryItem: View {
                 
                 ])
             } .sheet(isPresented: $showingEditSheet){
-                EditClassUIView(course: self.course).environmentObject(self.store)
+                EditClassUIView(course: self.store.classStorage[0]).environmentObject(self.store)
             }
         
     }
@@ -113,7 +105,7 @@ struct CategoryItem: View {
     
 }
 
-struct CategoryItem_Previews: PreviewProvider {
+struct CategoryItemSingle_Previews: PreviewProvider {
     static var previews: some View {
         CategoryItem(course: Classes(class_name: "COMP 401", grade: "A", credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0))
     }

@@ -13,7 +13,7 @@ import Combine
 class Semester : ObservableObject, Identifiable {
     @Published var classStorage : [Classes] { //Stores all the classses taken
         /*didSet { didChange.send() */
-        
+        //KEEP AS DIDSET
         didSet{ let encoder = JSONEncoder()
             
             if let encoded = try?
@@ -30,6 +30,10 @@ class Semester : ObservableObject, Identifiable {
     
     var catergories: [Int: [Classes]] {
         Dictionary(grouping: classStorage, by: {$0.category.rawValue})
+    }
+    
+    func getCatList(key: Int) -> [Classes]{
+        return catergories[key]!
     }
 
     init(){
@@ -65,7 +69,8 @@ class Semester : ObservableObject, Identifiable {
     //Adds new classs to classStorage array
     func addClass(newClass : Classes) {
         classStorage.append(newClass)
-        updateView()
+        self.updateView()
+        self.didChange.send()
     }
     
     //Method for calculating GPA
@@ -114,6 +119,7 @@ class Semester : ObservableObject, Identifiable {
     
     func updateView(){
         self.objectWillChange.send()
+        self.didChange.send()
     }
     
 }

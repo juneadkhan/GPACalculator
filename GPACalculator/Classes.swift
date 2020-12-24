@@ -69,6 +69,7 @@ public class Classes : Identifiable, Codable {
         self.credit_hours = 2.0
         self.category = Classes.Category.Fall2017
         self.colour = 1
+        self.grade_num = 2
         UpdateGradeWorth()
 
         
