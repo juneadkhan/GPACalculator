@@ -32,7 +32,7 @@ struct ContentView: View {
                     List{
                         
                         ForEach(store.catergories.keys.sorted().reversed(), id: \.self){key in
-                            CategoryRow(items: self.store.getCatList(key: key)).environmentObject(self.store)
+                            CategoryRow( key: key).environmentObject(self.store)
                             }
                             
                         }

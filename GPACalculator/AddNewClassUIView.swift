@@ -202,7 +202,8 @@ struct AddNewClassUIView: View {
         
         store.classStorage.append(Classes(class_name: className, grade: value, credit_hours: creditHours, category: categoryName, colour: colourName))
         
-
+        
+        print(store.catergories)
 
       }
     

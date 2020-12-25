@@ -11,7 +11,7 @@ import Foundation
 
 //Struct - Saves LONG TERM - Doesnt show up SHORT TERM
 //Class - No save Long Term - DOES SHOW UP SHORT TERM
-public class Classes : Identifiable, Codable {
+public struct Classes : Identifiable, Codable {
     
     //A Classes acts an individual class. e.g. "COMP 411"
     
@@ -95,16 +95,16 @@ public class Classes : Identifiable, Codable {
         return credit_hours!.description
     }
     
-    func UpdateGrade(newGrade:String){
+    mutating func UpdateGrade(newGrade:String){
         self.grade = newGrade;
         UpdateGradeWorth()
     }
     
-    func UpdateClassName(newName:String){
+    mutating func UpdateClassName(newName:String){
         self.class_name = newName;
     }
     
-    func UpdateGradeWorth(){
+    mutating func UpdateGradeWorth(){
         
         switch grade{
         case "A":
@@ -230,11 +230,12 @@ public class Classes : Identifiable, Codable {
     }
     
     
-    func editClass(class_name : String, grade : String, credit_hours : Double, category : Category, colour: Double){
+    mutating func editClass(class_name : String, grade : String, credit_hours : Double, category : Category, colour: Double){
         
         self.class_name = class_name
         self.grade = grade
         self.credit_hours = credit_hours
+        self.category = Category.Fall2019
         self.category = category
         self.colour = colour
     

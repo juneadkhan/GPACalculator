@@ -11,6 +11,7 @@ import Combine
 
 //A Semester object is holds a series of Classes objects
 class Semester : ObservableObject, Identifiable {
+    
     @Published var classStorage : [Classes] { //Stores all the classses taken
         /*didSet { didChange.send() */
         //KEEP AS DIDSET
@@ -29,11 +30,12 @@ class Semester : ObservableObject, Identifiable {
     var didChange = PassthroughSubject<Void,Never>()
     
     var catergories: [Int: [Classes]] {
-        Dictionary(grouping: classStorage, by: {$0.category.rawValue})
+        print("UPDATED CATEGORIES")
+        return Dictionary(grouping: classStorage, by: {$0.category.rawValue})
     }
     
     func getCatList(key: Int) -> [Classes]{
-        return catergories[key]!
+        return catergories[key] ?? [Classes(class_name: "FAKE")]
     }
 
     init(){

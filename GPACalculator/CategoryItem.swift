@@ -10,11 +10,16 @@ import SwiftUI
 
 struct CategoryItem: View {
     
-    var course: Classes
+    var courseInput: Classes
+    
     @State private var showingEditSheet = false
     @State private var showingActionSheet = false
     @EnvironmentObject var store : Semester //Stores the Class Data
-    var index : Int { store.classStorage.firstIndex(where: { $0.id == course.id })! }
+    var index : Int { store.classStorage.firstIndex(where: { $0.id == courseInput.id })! }
+    
+    var course: Classes {
+        return store.classStorage[index]
+    }
     
     var body: some View {
     
@@ -115,6 +120,6 @@ struct CategoryItem: View {
 
 struct CategoryItem_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryItem(course: Classes(class_name: "COMP 401", grade: "A", credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0))
+        CategoryItem(courseInput: Classes(class_name: "COMP 401", grade: "A", credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0))
     }
 }

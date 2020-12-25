@@ -174,6 +174,8 @@ struct EditClassUIView: View {
                                 
                                 self.store.classStorage = self.store.classStorage
                                 
+                                self.store.objectWillChange.send()
+                                
                                 self.PresentationMode.wrappedValue.dismiss()
                                                                 
                             }) {
