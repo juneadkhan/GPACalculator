@@ -15,10 +15,14 @@ struct CategoryItem: View {
     @State private var showingEditSheet = false
     @State private var showingActionSheet = false
     @EnvironmentObject var store : Semester //Stores the Class Data
-    var index : Int { store.classStorage.firstIndex(where: { $0.id == courseInput.id })! }
+    var index : Int { store.classStorage.firstIndex(where: { $0.id == courseInput.id }) ?? 0 }
     
     var course: Classes {
-        return store.classStorage[index]
+        if !store.classStorage.isEmpty{
+            return store.classStorage[index]
+        } else{
+            return Classes(class_name: "Fake")
+        }
     }
     
     var body: some View {
