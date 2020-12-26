@@ -1,5 +1,4 @@
-<img src="GPAceLogo1.png" width="500"/>
-
+<img src="GPAceLogo1.png" width="500"/> [<img src="appStore.svg" width="150"/>](https://apps.apple.com/gb/app/gpace/id1534041246)
 
 This is an **iOS Application** that lets you enter the classes you took and then tracks and calculates your overall GPA.
 - Built in the **Swift Programming Language**
