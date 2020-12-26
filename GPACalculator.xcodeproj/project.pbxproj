@@ -146,6 +146,7 @@
 				A011CCA324F2979500C30706 /* Frameworks */,
 				A011CCA424F2979500C30706 /* Resources */,
 				A0F077D02528EE26005663BB /* Embed Frameworks */,
+				A08E4A3D25979CFE00FA4C2C /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -201,6 +202,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A08E4A3D25979CFE00FA4C2C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A011CCA224F2979500C30706 /* Sources */ = {
@@ -353,7 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"GPACalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = 58VHG423AL;
 				ENABLE_PREVIEWS = YES;
@@ -375,7 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"GPACalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = 58VHG423AL;
 				ENABLE_PREVIEWS = YES;

@@ -9,16 +9,13 @@
 import Foundation
 import Combine
 
-//A Semester object is holds a series of Classes objects
-class Semester : ObservableObject, Identifiable {
-    
-    @Published var classStorage : [Classes] { //Stores all the classses taken
-        /*didSet { didChange.send() */
-        //KEEP AS DIDSET
-        didSet{ let encoder = JSONEncoder()
-            
+// A Semester object is holds a series of Classes objects
+class Semester: ObservableObject, Identifiable {
+    @Published var classStorage: [Classes] { // Stores all the classses taken
+        // KEEP AS DIDSET
+        didSet { let encoder = JSONEncoder()
             if let encoded = try?
-                encoder.encode(classStorage){
+                encoder.encode(classStorage) {
                 UserDefaults.standard.set(encoded, forKey: "classStorage")
                 print("DEFO DEFO GOT HERE")
 
@@ -26,102 +23,80 @@ class Semester : ObservableObject, Identifiable {
     }
 
     }
-    var SemesterGPA : Double //Variable for the Overall GPA
-    var didChange = PassthroughSubject<Void,Never>()
-    
+    var semesterGPA: Double // Variable for the Overall GPA
+    var didChange = PassthroughSubject<Void, Never>()
     var catergories: [Int: [Classes]] {
         print("UPDATED CATEGORIES")
         return Dictionary(grouping: classStorage, by: {$0.category.rawValue})
     }
-    
-    func getCatList(key: Int) -> [Classes]{
+    // Method
+    func getCatList(key: Int) -> [Classes] {
         return catergories[key] ?? [Classes(class_name: "FAKE")]
     }
 
-    init(){
-        self.SemesterGPA = 0.000
+    init() {
+        self.semesterGPA = 0.000
 
-        if let items = UserDefaults.standard.data(forKey: "classStorage")
-        {
+        if let items = UserDefaults.standard.data(forKey: "classStorage") {
             let decoder = JSONDecoder()
-            
-            if let decoded = try?
-                decoder.decode([Classes].self, from: items){
+            if let decoded = try? decoder.decode([Classes].self, from: items) {
                 self.classStorage = decoded
                 print("GOT HERE")
                 return
             }
         }
-        
         self.classStorage = []
 
     }
-    
-    
-    /*
-    init() {
-        
-        classStorage = []
-        SemesterGPA = 0
-
-       }
- 
-    */
-    
-    //Adds new classs to classStorage array
-    func addClass(newClass : Classes) {
+    // Adds new classs to classStorage array
+    func addClass(newClass: Classes) {
         classStorage.append(newClass)
         self.updateView()
         self.didChange.send()
     }
-    
-    //Method for calculating GPA
+    // Method for calculating GPA
     func calculateGPA() {
-        SemesterGPA = 0;
-        var creditHours = 0.0;
-        var Score = 0.0;
-        for Class in classStorage{
-            if (Class.grade_num == -1){
-                continue;
+        semesterGPA = 0
+        var creditHours = 0.0
+        var sum = 0.0
+        for course in classStorage {
+            if course.gradeNum == -1 {
+                continue
             }
-            creditHours += Class.credit_hours!
-            Score += Class.grade_num! * Class.credit_hours!
+            creditHours += course.creditHours!
+            sum += course.gradeNum! * course.creditHours!
         }
-        SemesterGPA = Score/creditHours
+        semesterGPA = sum/creditHours
     }
 
-    //Method for outputing GPA vaariable as a String
+    // Method for outputing GPA vaariable as a String
     func printGPA() -> String {
-        SemesterGPA = 0;
-        var creditHours = 0.0;
-        var Score = 0.0;
-        for Class in classStorage{
-            if (Class.grade_num == -1){
-                  continue;
+        semesterGPA = 0
+        var creditHours = 0.0
+        var sum = 0.0
+        for course in classStorage{
+            if course.gradeNum == -1 {
+                  continue
             }
-            creditHours += Class.credit_hours!
-            Score += Class.grade_num! * Class.credit_hours!
+            creditHours += course.creditHours!
+            sum += course.gradeNum! * course.creditHours!
         }
-        SemesterGPA = Score/creditHours
-
-        //Formats the GPA to 3.d.p
-        if (SemesterGPA.isNaN){
+        semesterGPA = sum/creditHours
+        // Formats the GPA to 3.d.p
+        if semesterGPA.isNaN {
             return "0.000"
         }
-        
-        return String.localizedStringWithFormat("%.3f", SemesterGPA);
+        return String.localizedStringWithFormat("%.3f", semesterGPA)
     }
-    
-    func removeClass(objectToRemove : Classes){
-        
-        if let index = classStorage.firstIndex(where: { $0 as AnyObject === objectToRemove as AnyObject}){
+    // Method Description
+    func removeClass(objectToRemove: Classes) {
+        if let index = classStorage.firstIndex(where: { $0 as AnyObject === objectToRemove as AnyObject}) {
             classStorage.remove(at: index)
         }
     }
-    
-    func updateView(){
+    // Method Description
+    func updateView() {
         self.objectWillChange.send()
         self.didChange.send()
     }
-    
 }
