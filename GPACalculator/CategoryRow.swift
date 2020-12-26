@@ -10,12 +10,16 @@ import SwiftUI
 import UIKit
 
 struct CategoryRow: View {
+
     @State private var showingActionSheet = false
-    @EnvironmentObject var store: Semester // Stores the Class Data
-    var items: [Classes] {
+    @EnvironmentObject var store: Semester
+    var key: Int // Refers to the Semester a class was taken in
+
+    // Holds an array of Courses which all are of the same Semester
+    var items: [Course] {
         return self.store.getCatList(key: self.key)
-    } // NOT UPDATING
-    var key: Int
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(items[0].getSemesterName().uppercased())
@@ -25,9 +29,10 @@ struct CategoryRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 5) {
                     if !self.items.isEmpty {
-                        ForEach(items) { indv in
+                        ForEach(items) { course in
                             VStack {
-                                CategoryItem(courseInput: indv).environmentObject(self.store)
+                                // Pass Individual Course to CategoryItem view to display its details in a Card
+                                CategoryItem(courseInput: course).environmentObject(self.store)
                             }
                         }
                     }

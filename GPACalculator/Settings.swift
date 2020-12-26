@@ -9,18 +9,20 @@
 import Combine
 import Foundation
 
-// A Semester object is holds a series of Classes objects
+/*
+This object allows the AddNewClassUIView to set the initial picker value for Semester
+based on the user's previous entry
+ */
+
 class Settings: ObservableObject, Identifiable {
 
     @Published var stored: DefaultSemester {
         didSet { let encoder = JSONEncoder()
-
             if let encoded = try?
                 encoder.encode(stored) {
                 UserDefaults.standard.set(encoded, forKey: "defaultSemester")
-        }
-    }
-
+                }
+            }
     }
 
     init() {

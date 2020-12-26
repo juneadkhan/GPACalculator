@@ -12,21 +12,24 @@ import SwiftUI
 struct EditClassUIView: View {
 
     @Environment(\.presentationMode) var PresentationMode: Binding<PresentationMode>
-    var course: Classes
     @EnvironmentObject var store: Semester // Brings in Environment Object
-    @State var value: String // DEFAULT
-    @State var creditHours: Double // DEFAULT
-    @State var className: String // DEFAULT
-    @State var categoryName: Classes.Category// DEFAULT
-    @State var colourName: Double // DEFAULT
-    @State private var conditionsMet = false // DEFAULT
-    
-    init(course: Classes){
+
+    // Paramters will be intialised based on course
+    @State var value: String
+    @State var creditHours: Double
+    @State var className: String
+    @State var categoryName: Course.Category
+    @State var colourName: Double
+    @State private var conditionsMet = false
+    var course: Course
+
+    // Initialisation of Paramters
+    init(course: Course){
         self.course = course
         self._value = State<String>(initialValue: course.grade)
         self._creditHours = State<Double>(initialValue: course.creditHours ?? 4)
         self._className = State<String>(initialValue: course.class_name)
-        self._categoryName = State<Classes.Category>(initialValue: course.category)
+        self._categoryName = State<Course.Category>(initialValue: course.category)
         self._colourName = State<Double>(initialValue: course.colour ?? 2)
     }
     
@@ -38,16 +41,18 @@ struct EditClassUIView: View {
                         Section {
                             TextField("Class Name", text: $className)
                         }
+                        // CreditHours Picker
                         Section {
                             Picker(selection: $creditHours, label: Text("Number of Credit Hours")) {
+                                // Takes input number from Picker and tags it a corresponding value
                                 Text("1").tag(1.0)
                                 Text("1.5").tag(1.5)
                                 Text("2").tag(2.0)
                                 Text("3").tag(3.0)
                                 Text("4").tag(4.0)
-                                // Takes input number from Picker and tags it a corresponding value
                                 }
                         }
+                        // Grade Picker
                         Section {
                             Picker(selection: $value, label: Text("Grade")) {
                                 Group {
@@ -72,45 +77,45 @@ struct EditClassUIView: View {
                         Section {
                              Picker(selection: $categoryName, label: Text("Semester")) {
                                 Group {
-                                    Text("Fall 2017").tag(Classes.Category.Fall2017)
-                                    Text("Spring 2018").tag(Classes.Category.Spring2018)
-                                    Text("Summer 2018").tag(Classes.Category.Summer2018)
+                                    Text("Fall 2017").tag(Course.Category.fall2017)
+                                    Text("Spring 2018").tag(Course.Category.spring2018)
+                                    Text("Summer 2018").tag(Course.Category.summer2018)
                                  }
                                 Group {
-                                    Text("Fall 2018").tag(Classes.Category.Fall2018)
-                                    Text("Spring 2019").tag(Classes.Category.Spring2019)
-                                    Text("Summer 2019").tag(Classes.Category.Summer2019)
+                                    Text("Fall 2018").tag(Course.Category.fall2018)
+                                    Text("Spring 2019").tag(Course.Category.spring2019)
+                                    Text("Summer 2019").tag(Course.Category.summer2019)
                                  }
 
                                 Group {
-                                    Text("Fall 2019").tag(Classes.Category.Fall2019)
-                                    Text("Spring 2020").tag(Classes.Category.Spring2020)
-                                    Text("Summer 2020").tag(Classes.Category.Summer2020)
+                                    Text("Fall 2019").tag(Course.Category.fall2019)
+                                    Text("Spring 2020").tag(Course.Category.spring2020)
+                                    Text("Summer 2020").tag(Course.Category.summer2020)
                                  }
                                 Group {
-                                    Text("Fall 2020").tag(Classes.Category.Fall2020)
-                                    Text("Spring 2021").tag(Classes.Category.Spring2021)
-                                    Text("Summer 2021").tag(Classes.Category.Summer2021)
+                                    Text("Fall 2020").tag(Course.Category.fall2020)
+                                    Text("Spring 2021").tag(Course.Category.spring2021)
+                                    Text("Summer 2021").tag(Course.Category.summer2021)
                                  }
                                 Group {
-                                    Text("Fall 2021").tag(Classes.Category.Fall2021)
-                                    Text("Spring 2022").tag(Classes.Category.Spring2022)
-                                    Text("Summer 2022").tag(Classes.Category.Summer2022)
+                                    Text("Fall 2021").tag(Course.Category.fall2021)
+                                    Text("Spring 2022").tag(Course.Category.spring2022)
+                                    Text("Summer 2022").tag(Course.Category.summer2022)
                                  }
                                 Group {
-                                    Text("Fall 2022").tag(Classes.Category.Fall2022)
-                                    Text("Spring 2023").tag(Classes.Category.Spring2023)
-                                    Text("Summer 2023").tag(Classes.Category.Summer2023)
+                                    Text("Fall 2022").tag(Course.Category.fall2022)
+                                    Text("Spring 2023").tag(Course.Category.spring2023)
+                                    Text("Summer 2023").tag(Course.Category.summer2023)
                                  }
                                 Group {
-                                    Text("Fall 2023").tag(Classes.Category.Fall2023)
-                                    Text("Spring 2024").tag(Classes.Category.Spring2024)
-                                    Text("Summer 2024").tag(Classes.Category.Summer2024)
+                                    Text("Fall 2023").tag(Course.Category.fall2023)
+                                    Text("Spring 2024").tag(Course.Category.spring2024)
+                                    Text("Summer 2024").tag(Course.Category.summer2024)
                                  }
                                 Group {
-                                    Text("Fall 2024").tag(Classes.Category.Fall2024)
-                                    Text("Spring 2025").tag(Classes.Category.Spring2025)
-                                    Text("Summer 2025").tag(Classes.Category.Summer2025)
+                                    Text("Fall 2024").tag(Course.Category.fall2024)
+                                    Text("Spring 2025").tag(Course.Category.spring2025)
+                                    Text("Summer 2025").tag(Course.Category.summer2025)
                                  }
                              }
                         }
@@ -130,7 +135,9 @@ struct EditClassUIView: View {
                         Section {
                             Button(action: {
                                 let index = self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!
-                                self.store.classStorage[index].editClass(class_name: self.className, grade: self.value, credit_hours: self.creditHours, category: self.categoryName, colour: self.colourName)
+                                self.store.classStorage[index].editClass(className: self.className,
+                                    grade: self.value, creditHours: self.creditHours,
+                                    category: self.categoryName, colour: self.colourName)
                                 self.store.classStorage = self.store.classStorage
                                 self.store.objectWillChange.send()
                                 self.PresentationMode.wrappedValue.dismiss()
@@ -149,8 +156,8 @@ struct EditClassUIView: View {
 
     struct EditClassUIView_Previews: PreviewProvider {
         static var previews: some View {
-            EditClassUIView(course: Classes(class_name: "COMP 401", grade: "A",
-                        credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0))
+            EditClassUIView(course: Course(className: "COMP 401", grade: "A",
+                        creditHours: 2.0, category: Course.Category.spring2021, colour: 3.0))
         }
     }
 }

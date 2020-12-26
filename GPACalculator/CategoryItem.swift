@@ -9,18 +9,22 @@
 import SwiftUI
 
 struct CategoryItem: View {
-    var courseInput: Classes
+
+    @EnvironmentObject var store: Semester
     @State private var showingEditSheet = false
     @State private var showingActionSheet = false
-    @EnvironmentObject var store: Semester // Stores the Class Data
+    var courseInput: Course
     var index: Int { store.classStorage.firstIndex(where: { $0.id == courseInput.id }) ?? 0 }
-    var course: Classes {
+
+    // Gets the course from the EnviromentObject Store to ensure it is always up-to-date
+    var course: Course {
         if !store.classStorage.isEmpty {
             return store.classStorage[index]
         } else {
-            return Classes(class_name: "")
+            return Course(className: "")
         }
     }
+
     var body: some View {
             ZStack {
                 LinearGradient(gradient: Gradient(
@@ -59,12 +63,15 @@ struct CategoryItem: View {
             }
             .actionSheet(isPresented: $showingActionSheet) {
                 ActionSheet(title: Text("Choose Option"), buttons: [
+                    // Edit Button
                     .default(Text("Edit"), action: {
-                    self.showingEditSheet.toggle()
-                    }),
+                    self.showingEditSheet.toggle()}),
+
+                    // Delete Button
                     .destructive(Text("Delete"), action: {
-                    self.delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)
-                    }),
+                    self.delete(at: self.store.classStorage.firstIndex(where: { $0.id == self.course.id })!)}),
+
+                    // Cancel Button
                     .cancel()
                 ])
             } .sheet(isPresented: $showingEditSheet) {
@@ -79,7 +86,7 @@ struct CategoryItem: View {
 
 struct CategoryItem_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryItem(courseInput: Classes(class_name: "COMP 401", grade: "A",
-                    credit_hours: 2.0, category: Classes.Category.Spring2021, colour: 3.0))
+        CategoryItem(courseInput: Course(className: "COMP 401", grade: "A",
+                    creditHours: 2.0, category: Course.Category.spring2021, colour: 3.0))
     }
 }

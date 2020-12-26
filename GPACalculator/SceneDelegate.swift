@@ -11,7 +11,7 @@ import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var store = Semester() // CREATES ENVIROMENT OBJECT THAT STORES CLASS INFORMATION
+    var store = Semester() // Creates Enviroment Object that stores all Semeseter information
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
