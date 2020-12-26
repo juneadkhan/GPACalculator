@@ -9,7 +9,7 @@ This is an **iOS Application** that lets you enter the classes you took and then
 
 ### Add, Remove, Edit and Scroll through Classes:
 
-<img src="addClassDemo.gif" width="220"/> <img src="editClassDemo.gif" width="214"/> <img src="deleteClassDemo.gif" width="214"/>  <img src="scrollDemo.gif" width="218"/>
+<img src="addClassDemo.gif" width="200"/> <img src="editClassDemo.gif" width="194"/> <img src="deleteClassDemo.gif" width="194"/>  <img src="scrollDemo.gif" width="198"/>
 
 ### Pass/Fail Support:
 
@@ -19,8 +19,8 @@ With many schools implementing Pass/Fail due to the COVID-19 Pandemic, this app 
 
 No need to add all your classes every single time. With GPAce, you can add your classes once and they will be stored until the next time you need them.  
 
-### Dark Mode Support:
-<img src="Screenshot 2020-08-23 at 17.10.26.png" width="250"/> <img src="Screenshot 2020-08-23 at 17.12.44.png" width="240"/>
+### Light/Dark Mode Support:
+<img src="lightDemo.png" width="200"/>
 
 ## Notes
 
