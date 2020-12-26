@@ -8,7 +8,7 @@ This is an **iOS Application** that lets you enter the classes you took and then
 
 ### Add, Remove and Reorder Classes:
 
-<img src="dcf379d86bbf9340f58ce8296c05934d.gif" width="250"/> <img src="0e5d326270b568386c9cb6bd3e42a881.gif" width="250"/> <img src="80d21f77ea3ff2446f691b397b33be2c.gif" width="250"/>
+<img src="addClassDemo.gif" width="250"/> <img src="editClassDemo.gif" width="250"/> <img src="removeClassDemo.gif" width="250"/>
 
 ### Dark Mode Support:
 <img src="Screenshot 2020-08-23 at 17.10.26.png" width="250"/> <img src="Screenshot 2020-08-23 at 17.12.44.png" width="240"/>
