@@ -9,7 +9,7 @@ This is an **iOS Application** that lets you enter the classes you took and then
 
 ### Add, Remove, Edit and Scroll through Classes:
 
-<img src="addClassDemo.gif" width="230"/> <img src="editClassDemo.gif" width="224"/> <img src="deleteClassDemo.gif" width="224"/>  <img src="scrollDemo.gif" width="228"/>
+<img src="addClassDemo.gif" width="220"/> <img src="editClassDemo.gif" width="214"/> <img src="deleteClassDemo.gif" width="214"/>  <img src="scrollDemo.gif" width="218"/>
 
 ### Pass/Fail Support:
 
@@ -18,7 +18,6 @@ With many schools implementing Pass/Fail due to the COVID-19 Pandemic, this app 
 ### Persistent Data Storage:
 
 No need to add all your classes every single time. With GPAce, you can add your classes once and they will be stored until the next time you need them.  
-
 
 ### Dark Mode Support:
 <img src="Screenshot 2020-08-23 at 17.10.26.png" width="250"/> <img src="Screenshot 2020-08-23 at 17.12.44.png" width="240"/>
@@ -119,6 +118,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
 ## Areas for Improvement
 - [X] Add Pass/Fail Support
 - [ ] Add option to adjust GPA Weighting from within App
-- [ ] Allow Classes to be organised into individual Semesters
+- [X] Allow Classes to be organised into individual Semesters
 - [ ] Calculate GPA per Semester
-- [ ] Use Persistent Data (e.g. Core Data) to preserve the user inputs so it can track GPA.
+- [X] Use Persistent Data (e.g. Core Data) to preserve the user inputs so it can track GPA.
