@@ -1,4 +1,5 @@
-# GPA Calculator iOS App ➕➗✖️ 📱
+<img src="GPAceLogo1.png" width="500"/>
+
 
 This is an **iOS Application** that lets you enter the classes you took and then tracks and calculates your overall GPA.
 - Built in the **Swift Programming Language**
