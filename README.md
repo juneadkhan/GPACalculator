@@ -3,45 +3,60 @@
 This is an **iOS Application** that lets you enter the classes you took and then tracks and calculates your overall GPA.
 - Built in the **Swift Programming Language**
 - User Interface built using **SwiftUI**
+- Code linted using **SwiftLint** and **GitHub Swift Style Guide**
 
 ## Key Features 
 
-### Add, Remove and Reorder Classes:
+### Add, Remove, Edit and Scroll through Classes:
 
 <img src="addClassDemo.gif" width="230"/> <img src="editClassDemo.gif" width="224"/> <img src="deleteClassDemo.gif" width="224"/>  <img src="scrollDemo.gif" width="228"/>
+
+### Pass/Fail Support:
+
+With many schools implementing Pass/Fail due to the COVID-19 Pandemic, this app now allows you to add a class with a PS grade. This grade will not count towards your overall GPA - thus allowing you to correctly and easily calculate your true GPA.
+
+### Persistent Data Storage:
+
+No need to add all your classes every single time. With GPAce, you can add your classes once and they will be stored until the next time you need them.  
+
 
 ### Dark Mode Support:
 <img src="Screenshot 2020-08-23 at 17.10.26.png" width="250"/> <img src="Screenshot 2020-08-23 at 17.12.44.png" width="240"/>
 
 ## Notes
 
-This Application is based off the GPA System at UNC-Chapel Hill. The values in Class.swift can be adapted to represent the instiution you wish to calculate for. Here is a snippet of the code that determines this:
+This Application is based off the GPA System at UNC-Chapel Hill. The values in Course.swift can be adapted to represent the instiution you wish to calculate for. Here is a snippet of the code that determines this:
 ```swift
-        switch grade{
+        switch grade {
         case "A":
-            self.grade_num = 4.0;
+            self.gradeNum = 4.0
         case "A-":
-            self.grade_num = 3.7;
+            self.gradeNum = 3.7
         case "B+":
-            self.grade_num = 3.3;
+            self.gradeNum = 3.3
         case "B":
-            self.grade_num = 3.0;
+            self.gradeNum = 3.0
         case "B-":
-            self.grade_num = 2.7;
+            self.gradeNum = 2.7
         case "C+":
-            self.grade_num = 2.3;
+            self.gradeNum = 2.3
+        case "C":
+            self.gradeNum = 2.0
         case "C-":
-            self.grade_num = 2.0;
+            self.gradeNum = 2.0
         case "D+":
-            self.grade_num = 1.3;
+            self.gradeNum = 1.7
         case "D":
-            self.grade_num = 1.0;
+            self.gradeNum = 1.0
         case "F":
-            self.grade_num = 0;
+            self.gradeNum = 0
+        case "PS":
+            self.gradeNum = -1
         default:
             print("Some other character")
 
         }
+    }
 ```
 ## Privacy Policy
 
