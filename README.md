@@ -116,8 +116,8 @@ Contact Us
 If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at on GitHub.
 
 ## Areas for Improvement
-- [X] Add Pass/Fail Support
-- [ ] Add option to adjust GPA Weighting from within App
-- [X] Allow Classes to be organised into individual Semesters
-- [ ] Calculate GPA per Semester
 - [X] Use Persistent Data (e.g. Core Data) to preserve the user inputs so it can track GPA.
+- [X] Add Pass/Fail Support
+- [X] Allow Classes to be organised into individual Semesters
+- [ ] Add option to adjust GPA Weighting from within App
+- [ ] Calculate GPA per Semester
