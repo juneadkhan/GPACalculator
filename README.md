@@ -120,4 +120,5 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
 - [X] Add Pass/Fail Support
 - [X] Allow Classes to be organised into individual Semesters
 - [ ] Add option to adjust GPA Weighting from within App
+- [ ] Feature to long press and be able to move classes within a Semester
 - [ ] Calculate GPA per Semester
