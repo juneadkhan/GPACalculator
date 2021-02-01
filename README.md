@@ -5,6 +5,8 @@ This is an **iOS Application** that lets you enter the classes you took and then
 - User Interface built using **SwiftUI**
 - Code linted using **SwiftLint** and **GitHub Swift Style Guide**
 
+https://juneadkhan.github.io/GPACalculator/
+
 ## Key Features 
 
 ### Add, Remove, Edit and Scroll through Classes:
