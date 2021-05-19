@@ -58,6 +58,9 @@ class Semester: ObservableObject, Identifiable {
         var creditHours = 0.0
         var grades = 0.0
         for item in semester{
+            if item.gradeNum == -1 {
+                continue
+            }
             grades += (item.gradeNum ?? 0.0) * (item.creditHours ?? 0.0)
             creditHours += item.creditHours ?? 0.0
         }
@@ -82,7 +85,7 @@ class Semester: ObservableObject, Identifiable {
             return "0.000"
         }
         
-        return String.localizedStringWithFormat("%.0f", creditHours)
+        return String.localizedStringWithFormat("%.1f", creditHours)
     }
 
     // Method for calculating GPA

@@ -29,7 +29,7 @@ struct ContentView: View {
     
                     VStack {
                             Section {
-                                Text("Current GPA is: ".uppercased())
+                                Text("Overall GPA is: ".uppercased())
                                     .font(.footnote)
                                 Text(store.printGPA())
                                     .font(.system(size: 30, weight: .bold, design: .rounded))

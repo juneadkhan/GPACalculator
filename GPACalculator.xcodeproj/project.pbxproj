@@ -53,10 +53,6 @@
 		A048EEDB25895B7B00173EA2 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		A0A71EA4258F0824007B3FC1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A0A71EA6258FD45E007B3FC1 /* EditClassUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClassUIView.swift; sourceTree = "<group>"; };
-		A0F077B92528EC8E005663BB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0F077BA2528EC8E005663BB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0F077C72528EDE8005663BB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0F077C82528EDE8005663BB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +76,6 @@
 		6F3E611139D3E5BCE2D125A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0F077C72528EDE8005663BB /* Realm.framework */,
-				A0F077C82528EDE8005663BB /* RealmSwift.framework */,
-				A0F077B92528EC8E005663BB /* Realm.framework */,
-				A0F077BA2528EC8E005663BB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -353,7 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GPACalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = 58VHG423AL;
 				ENABLE_PREVIEWS = YES;
@@ -362,7 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.00;
+				MARKETING_VERSION = 3.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.juneadkhan.GPACalculator;
 				PRODUCT_NAME = GPAce;
 				SWIFT_VERSION = 5.0;
@@ -375,7 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GPACalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = 58VHG423AL;
 				ENABLE_PREVIEWS = YES;
@@ -384,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.00;
+				MARKETING_VERSION = 3.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.juneadkhan.GPACalculator;
 				PRODUCT_NAME = GPAce;
 				SWIFT_VERSION = 5.0;

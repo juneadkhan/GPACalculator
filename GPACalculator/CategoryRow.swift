@@ -32,17 +32,26 @@ struct CategoryRow: View {
         VStack(alignment: .leading, spacing: 5) {
             HStack{
             Text(items[0].getSemesterName().uppercased())
-                .font(.footnote)
+                .font(.system(size: 12.5, weight: .bold, design: .default))
                 .padding(.leading, 5)
                 .padding(.top, 2)
                 
+                Text("" + credits + " Credits")
+                    .font(.system(size: 12.5, weight: .light, design: .default))
+                    .padding(.top, 2)
+                    .padding(.trailing, 1)
+
+                    
                 Spacer()
-                
-                Text("" + credits + " Credits" + " - GPA: " + gpa)
-                    .font(.footnote)
+            
+                                
+                Text("GPA: " + gpa)
+                    .font(.system(size: 12.5, weight: .semibold, design: .default))
                     .padding(.trailing, 5)
                     .padding(.top, 2)
+                
             }
+                   
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 5) {
                     if !self.items.isEmpty {

@@ -35,21 +35,21 @@ struct CategoryItem: View {
                 VStack {
                     HStack {
                         Text(course.grade)
-                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .font(.system(size: 34, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                             .padding(.leading, 10)
                       Spacer()
                     }
                     HStack {
                         Text(course.class_name)
-                              .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .font(.system(size: 14.5, weight: .semibold, design: .rounded))
                               .foregroundColor(.white)
                               .padding(.leading, 10)
                         Spacer()
                       }
                     HStack {
                         Text(course.outputCreditHours() + " Credits")
-                            .font(.system(size: 10, weight: .regular, design: .rounded))
+                            .font(.system(size: 11, weight: .regular, design: .rounded))
                               .foregroundColor(.white)
                               .padding(.leading, 10)
                         Spacer()
