@@ -88,5 +88,6 @@ struct CategoryItem_Previews: PreviewProvider {
     static var previews: some View {
         CategoryItem(courseInput: Course(className: "COMP 401", grade: "A",
                     creditHours: 2.0, category: Course.Category.spring2021, colour: 3.0))
+            .environmentObject(Semester())
     }
 }

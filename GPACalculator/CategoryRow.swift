@@ -19,13 +19,30 @@ struct CategoryRow: View {
     var items: [Course] {
         return self.store.getCatList(key: self.key)
     }
-
+    
+    var gpa: String{
+        return self.store.getCatGPA(key: self.key)
+    }
+    
+    var credits: String{
+        return self.store.getCatCredits(key: self.key)
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
+            HStack{
             Text(items[0].getSemesterName().uppercased())
                 .font(.footnote)
                 .padding(.leading, 5)
                 .padding(.top, 2)
+                
+                Spacer()
+                
+                Text("" + credits + " Credits" + " - GPA: " + gpa)
+                    .font(.footnote)
+                    .padding(.trailing, 5)
+                    .padding(.top, 2)
+            }
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 5) {
                     if !self.items.isEmpty {
@@ -46,5 +63,7 @@ struct CategoryRow_Previews: PreviewProvider {
     static var classes = Semester().classStorage
     static var previews: some View {
         CategoryRow(key: 2)
+            .environmentObject(Semester())
     }
+    
 }

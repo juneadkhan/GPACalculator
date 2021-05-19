@@ -39,7 +39,7 @@ class Settings: ObservableObject, Identifiable {
 }
 
 struct DefaultSemester: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     var defName: String
     init() {
         self.defName = "Spring 2021"

@@ -52,6 +52,38 @@ class Semester: ObservableObject, Identifiable {
     func getCatList(key: Int) -> [Course] {
         return catergories[key] ?? [Course(className: "")]
     }
+    
+    func getCatGPA(key: Int) -> String {
+        let semester = catergories[key] ?? [Course(className: "")]
+        var creditHours = 0.0
+        var grades = 0.0
+        for item in semester{
+            grades += (item.gradeNum ?? 0.0) * (item.creditHours ?? 0.0)
+            creditHours += item.creditHours ?? 0.0
+        }
+        
+        semesterGPA = grades/creditHours
+        
+        if semesterGPA.isNaN {
+            return "0.000"
+        }
+        
+        return String.localizedStringWithFormat("%.2f", semesterGPA)
+    }
+    
+    func getCatCredits(key: Int) -> String {
+        let semester = catergories[key] ?? [Course(className: "")]
+        var creditHours = 0.0
+        for item in semester{
+            creditHours += item.creditHours ?? 0.0
+        }
+        
+        if creditHours.isNaN {
+            return "0.000"
+        }
+        
+        return String.localizedStringWithFormat("%.0f", creditHours)
+    }
 
     // Method for calculating GPA
     func calculateGPA() {
