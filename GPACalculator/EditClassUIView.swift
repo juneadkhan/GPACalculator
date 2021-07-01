@@ -50,6 +50,8 @@ struct EditClassUIView: View {
                                 Text("2").tag(2.0)
                                 Text("3").tag(3.0)
                                 Text("4").tag(4.0)
+                                Text("5").tag(5.0)
+
                                 }
                         }
                         // Grade Picker
