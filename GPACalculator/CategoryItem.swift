@@ -61,6 +61,9 @@ struct CategoryItem: View {
         .onTapGesture {
                 self.showingActionSheet = true
             }
+        .onLongPressGesture(minimumDuration: 0.1){
+            self.showingActionSheet = true
+        }
             .actionSheet(isPresented: $showingActionSheet) {
                 ActionSheet(title: Text("Choose Option"), buttons: [
                     // Edit Button

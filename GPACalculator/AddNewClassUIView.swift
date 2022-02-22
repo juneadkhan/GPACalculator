@@ -71,11 +71,6 @@ struct AddNewClassUIView: View {
                         Section {
                                  Picker(selection: $categoryName, label: Text("Semester")) {
                                     Group {
-                                        Text("Fall 2017").tag(Course.Category.fall2017)
-                                        Text("Spring 2018").tag(Course.Category.spring2018)
-                                        Text("Summer 2018").tag(Course.Category.summer2018)
-                                     }
-                                    Group {
                                         Text("Fall 2018").tag(Course.Category.fall2018)
                                         Text("Spring 2019").tag(Course.Category.spring2019)
                                         Text("Summer 2019").tag(Course.Category.summer2019)
@@ -111,6 +106,16 @@ struct AddNewClassUIView: View {
                                         Text("Spring 2025").tag(Course.Category.spring2025)
                                         Text("Summer 2025").tag(Course.Category.summer2025)
                                      }
+                                     Group {
+                                         Text("Fall 2025").tag(Course.Category.fall2025)
+                                         Text("Spring 2026").tag(Course.Category.spring2026)
+                                         Text("Summer 2026").tag(Course.Category.summer2026)
+                                      }
+                                     Group {
+                                         Text("Fall 2026").tag(Course.Category.fall2026)
+                                         Text("Spring 2027").tag(Course.Category.spring2027)
+                                         Text("Summer 2027").tag(Course.Category.summer2027)
+                                      }
                                  }
                         }
                         // Colour Picker

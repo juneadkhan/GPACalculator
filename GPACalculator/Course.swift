@@ -22,10 +22,7 @@ public struct Course: Identifiable, Codable {
     var category: Category // Allows for sorting by semester
 
     enum Category: Int, CaseIterable, Codable {
-        case fall2017
-        case spring2018
-        case summer2018
-
+        
         case fall2018
         case spring2019
         case summer2019
@@ -53,15 +50,23 @@ public struct Course: Identifiable, Codable {
         case fall2024
         case spring2025
         case summer2025
+        
+        case fall2025
+        case spring2026
+        case summer2026
+        
+        case fall2026
+        case spring2027
+        case summer2027
     }
 
     init(className: String) {
         self.class_name = className
         self.grade = "PS"
-        self.creditHours = 2.0
-        self.category = Course.Category.fall2017
-        self.colour = 1
-        self.gradeNum = 2
+        self.creditHours = 3.0
+        self.category = Course.Category.fall2019
+        self.colour = 4
+        self.gradeNum = 1
         updateGradeWorth()
     }
 
@@ -117,6 +122,8 @@ public struct Course: Identifiable, Codable {
             self.gradeNum = 0
         case "PS":
             self.gradeNum = -1
+        case "IP":
+            self.gradeNum = -1
         default:
             print("Some other character")
 
@@ -166,10 +173,6 @@ public struct Course: Identifiable, Codable {
 
     func getSemesterName() -> String {
         switch category {
-        case .fall2017 : return "Fall 2017"
-        case .spring2018 : return "Spring 2018"
-        case .summer2018 : return "Summer 2018"
-
         case .fall2018 : return "Fall 2018"
         case .spring2019 : return "Spring 2019"
         case .summer2019 : return "Summer 2019"
@@ -197,6 +200,14 @@ public struct Course: Identifiable, Codable {
         case .fall2024 : return "Fall 2024"
         case .spring2025 : return "Spring 2025"
         case .summer2025 : return "Summer 2025"
+            
+        case .fall2025 : return "Fall 2025"
+        case .spring2026 : return "Spring 2026"
+        case .summer2026 : return "Summer 2026"
+            
+        case .fall2026 : return "Fall 2026"
+        case .spring2027 : return "Spring 2027"
+        case .summer2027 : return "Summer 2027"
         }
     }
 
