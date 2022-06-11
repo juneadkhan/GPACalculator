@@ -121,6 +121,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
 - [X] Use Persistent Data (e.g. Core Data) to preserve the user inputs so it can track GPA.
 - [X] Add Pass/Fail Support
 - [X] Allow Classes to be organised into individual Semesters
+- [X] Calculate GPA per Semester
 - [ ] Add option to adjust GPA Weighting from within App
 - [ ] Feature to long press and be able to move classes within a Semester
-- [ ] Calculate GPA per Semester
